@@ -1,0 +1,27 @@
+<form (ngSubmit)="add()">
+  <h1>Angular HTTP Service Example</h1>
+  <table border="1" style="width: 33%">
+    <tr>
+      <td><label for="name">Name</label></td>
+      <td><label for="status">Status</label></td>
+    </tr>
+    <tr>
+      <td><input type="text" id="name" placeholder="Name" [(ngModel)]="employee.name" name="name"></td>
+      <td><input type="text" id="status" placeholder="Status" [(ngModel)]="employee.status" name="status"></td>
+    </tr>
+    <tr>
+      <td colspan="3"><input type="submit" value="ajouter"></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>supprimer</th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.status }}</td>
+      <td><button (click)="supp(emp.id)">supprimer</button></td>
+      <td><button (click)="edit(emp)">modifier</button></td>
+    </tr>
+  </table>
+</form>
